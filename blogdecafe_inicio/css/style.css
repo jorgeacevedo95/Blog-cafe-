@@ -1,0 +1,311 @@
+:root{
+    --fuenteHeading: 'PT sans';
+    --fuenteParrafos: 'Open Sans';
+
+    --primario: #784d3c;
+    --blanco: #ffffff;
+    --negro: #000000;
+    --claro: #e1e1e1;
+}
+
+html{
+    box-sizing: boder-box;
+    font-size: 62.5%; /*para que 1rem=10px*/
+}
+
+*,*:before, *:after{
+    box-sizing: inherit;
+}
+
+body{
+    font-family: var(--fuenteParrafos);
+    font-size: 1.6rem; /*16px*/
+    line-height: 2; /*separacion entre lineas*/
+}
+
+/*Globales*/
+
+.contenedor{
+    max-width: 120rem; /*tiene un ancho de 1200px si los hay en la pantalla. Si no estan los 1200px entonces ocupa el 90% de los pixeles disponibles*/
+    width: 90%; /*ocupa el 90% de los pixeles de la pantalla*/
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1,h2,h3,h4 {
+    font-family: var(--fuenteHeading);
+    line-height: 1.2;
+}
+
+h1{
+    font-size: 4.8rem;
+}
+
+h2{
+    font-size: 4rem;
+}
+
+h3{
+    font-size: 3.2rem;
+}
+
+h4{
+    font-size: 2.8rem;
+}
+
+img{
+    max-width: 100%;
+}
+
+.no-margin{
+    margin: 0;
+}
+
+.no-padding{
+    padding: 0;
+}
+
+.centrar-texto{
+    text-align: center;
+}
+
+/*header*/
+
+.webp .header{/*si el navegador soporta webp se mostrara la imagen con extencion webp*/
+    background-image: url(../img/banner.webp);
+}
+
+.no-webp .header{/*si el navegador no soporta webp mostrara la imagen jpg*/
+    background-image: url(../img/banner.jpg);/*agrega la imagen al header de la pagina*/
+}
+
+.header{
+    height: 60rem; /*de la altura a la imagen de 600px*/
+    background-size: cover; /*se cubre todo el espacio con la imagen*/
+    background-repeat: no-repeat; /*que solo aparezca una vez la imagen y no se repita*/
+    background-position: center center; /*se usa para mostrar el centro de la imagen cuando la pantalla este mas pequeña. Se puede usar left, right, top y botton*/
+}
+
+.header_texto{
+    text-align: center;
+    color: var(--blanco); 
+}
+
+.barra{
+    padding-top: 4rem;
+}
+
+@media (min-width: 768px) {
+    .barra{
+        display: flex;/*llama a flex box*/
+        justify-content: space-between; /*alineacion horizontal de elementos*/
+        align-items: center;/*alinacion vertical de los elementos*/
+    }
+}
+
+.logo{
+    color: var(--blanco);
+    margin: 0;
+}
+
+.logo_nombre{
+    font-weight: normal;/*grosor de la letra*/
+    margin: 0;
+}
+
+.logo_bold{
+    font-weight: 700;
+}
+@media (min-width: 768px) {
+    .header_texto{
+        margin-top: 15rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .navegacion{
+        display: flex;
+        gap: 2rem;
+    }
+}
+
+.navegacion_enlace{
+    display: block;/*ubica los elementos uno debajo del otro*/
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--blanco);
+}
+
+/*contenido principal*/
+
+@media (min-width: 768px) {
+    .contenido_principal{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 4rem;
+    }
+}
+
+.entrada{
+    border-bottom: 1px solid var(--claro);
+    margin-bottom: 2rem;
+}
+
+.entrada:last-of-type{
+    border: none;
+    margin-bottom: 0;
+}
+
+.boton{
+    display: block;
+    font-family: var(--fuenteParrafos);
+    color: var(--blanco);
+    text-align: center;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;/*mayusculas*/
+    font-weight: 700;
+    margin-bottom: 2rem;
+    border: none;
+}
+
+@media (min-width: 768px) {
+    .boton{
+        display: inline-block;/**/
+    }
+}
+
+.boton:hover{
+    cursor: pointer;
+}
+
+.boton--primario{
+    background-color: var(--negro);
+}
+
+/*Sidebar*/
+
+.boton--secundario{
+    background-color: var(--primario);
+}
+
+.cursos{
+    list-style: none;
+}
+
+.widget-curso{
+    border-bottom: 1px solid var(--claro);
+    margin-bottom: 2rem;
+}
+
+.widget-curso:last-of-type{
+    border: none;
+    margin-bottom: 0;
+}
+
+.widger-curso_label{
+    font-family: var(--fuenteHeading);
+    font-weight: 700;
+}
+
+.widger-curso_info{
+    font-weight: 400;
+}
+
+.widger-curso_label,
+.widger-curso_info{
+    font-size: 2rem;
+}
+
+/*footer*/
+
+.footer{
+    background-color: var(--negro);
+    padding-bottom: 3rem;
+    margin-top: 3rem;
+}
+
+/*Sobre nosotros*/
+
+@media (min-width: 768px) {
+    .sobre-nosotros{
+        display: flex;
+        gap: 2rem;
+    }
+    .sobre-nosotros__imagen,
+    .sobre-nosotros__texto{
+        flex-basis: 50%;
+    }
+}
+
+/*cursos*/
+
+.curso{
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--claro);
+}
+
+.curso:last-of-type{
+    border-bottom: none;
+}
+
+@media (min-width: 768px) {
+    .curso{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 2rem;
+    }
+}
+
+.curso_label{
+    font-family: var(--fuenteHeading);
+    font-weight: 700;
+}
+
+.curso_info{
+    font-weight: 400;
+}
+
+.curso_label,
+.curso_info{
+    font-size: 2rem;
+}
+
+/*contacto*/
+
+.contacto-backgound{
+    background-image: url(../img/contacto.jpg);
+    height: 40rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.formulario{
+    background-color: var(--blanco);
+    margin: -5rem auto 0 auto;/*con el menos la margen va a hacia arriba*/
+    width: 85%;
+    padding: 5rem;
+}
+
+.campo{
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.campo__label{
+    flex: 0 0 9rem;
+    text-align: right;
+    padding-right: 2rem;
+}
+
+.campo__field{
+    flex: 1;
+    border: 1px solid var(--claro);
+}
+
+.campo__field--textarea{
+    height: 20rem;
+}
